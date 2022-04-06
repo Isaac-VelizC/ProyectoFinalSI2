@@ -1,0 +1,299 @@
+.emoji-kapsa {
+       cursor: pointer;
+}
+
+.emoji-kapsa:hover .counter {
+    transform: translateY(5px);
+}
+
+.kapsa {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.counter {
+    color: #363232;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #F3FFCC;
+    position: relative;
+}
+
+.counter:before {
+            border: 10px solid transparent;
+            content: "";
+            border-bottom: 10px solid #F3FFCC;
+            position: absolute;
+            top: -20px;
+            left: 13px;
+}
+
+
+.emoji-sad, .emoji-happy, .emoji-confused, .emoji-ashamed, .emoji-tongue, .emoji-angry {
+    height: 45px;
+    width: 45px;
+    background-color: #ffda6b;
+    border-radius: 100%;
+    position: relative;
+}
+
+.eyes {
+    position: absolute;
+    background: #262b37;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+}
+
+.emoji-sad .eyes,  .emoji-tongue .eyes:nth-child(2) {
+    top: 13px;
+    left: 10px;
+}
+
+.emoji-sad .eyes:nth-child(2), .emoji-tongue .eyes:nth-child(2) {
+    left: 27px;
+}
+
+.emoji-sad .mouth, .emoji-ashamed .mouth, .emoji-tongue .mouth {
+    width: 22px;
+    height: 15px;
+    position: absolute;
+    top: 31px;
+    left: 12px;
+    border: 2px solid;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 50%; 
+}
+
+.tears {
+    background-color: #558cff;
+    position: absolute;
+    width: 6px;
+    height: 11px;
+    border-radius: 100%;
+    left: 7px;
+    top: 25px;
+}
+
+.emoji-happy .eyes, .emoji-ashamed .eyes, .emoji-tongue :nth-child(1)  {
+    background: transparent;
+    width: 14px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    border: 2px solid;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 50%; 
+}
+
+.emoji-happy :nth-child(2), .emoji-ashamed :nth-child(2) {
+    left: 24px;
+}
+
+.emoji-happy .mouth {
+    position: absolute;
+    top: 25px;
+    left: 9px;
+    border:14px solid #f7aa86;
+    border-top:none;
+    border-bottom-right-radius:
+        14px;
+    border-bottom-left-radius:14px;
+}
+
+.mouth .teeth {
+    position: absolute;
+    width: 26px;
+    left: -13px;
+    top: 0;
+    height: 4px;
+    background-color: #fff;
+}
+
+.emoji-happy .tears {
+    left: 3px;
+    top: 21px;
+    z-index: 2;
+}
+
+.emoji-happy .tears:nth-child(4) {
+    left: 37px;
+    top: 21px;
+    z-index: 6;
+}
+
+
+.emoji-confused .eyes {
+    position: absolute;
+    background: #262b37;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    top: 10px;
+    left: 10px;
+}
+
+.emoji-confused .eyes:nth-child(2) {
+    left: 25px;
+}
+
+.emoji-confused .mouth {
+    width: 13px;
+    height: 16px;
+    position: absolute;
+    background-color: #242c37;
+    top: 25px;
+    left: 16px;
+    border-radius: 100%; 
+}
+
+.pink {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #fa9268;
+    top: 23px;
+    left: 7px;
+}
+
+.pink:nth-child(4) {
+    left: 31px;
+}
+
+.emoji-ashamed .mouth, .emoji-tongue .mouth {
+    border-color: transparent transparent #000 transparent;
+    top: 18px;
+    left: 12px;
+}
+
+.tongue {
+    position: absolute;
+    top: 32px;
+    left: 20px;
+    background-color: #E48F67;
+    width: 8px;
+    height: 10px;
+    border-radius: 0 0 100% 100%;
+}
+
+.emoji-angry {
+     box-shadow:  inset 0px 0px 40px -2px rgba(249,127,104,1);
+    overflow: hidden;
+}
+
+.emoji-angry .eyes {
+    width: 11px;
+    height: 3px;
+    transform: rotate(15deg);
+    position: absolute;
+    top: 15px;
+    left: 8px;
+}
+
+
+.emoji-angry .eyes:nth-child(2) {
+    transform: rotate(-15deg);
+    top: 15px;
+    left: 27px;
+}
+
+.emoji-angry .mouth {
+    width: 19px;
+    height: 2px;
+    background: #242c37;
+    position: absolute;
+    top: 30px;
+    left: 13px;
+}
+
+.emoji-sad .tears {
+        animation: .78s linear infinite cry;
+}
+
+.emoji-happy .tears {
+        animation: .5s linear infinite opac;
+}
+
+.emoji-happy .tears:nth-child(4) {
+        animation: 1s linear infinite opac;
+}
+
+.emoji-confused .mouth {
+        animation: .8s linear infinite scale;
+}
+
+.emoji-ashamed .mouth {
+        animation: .8s linear infinite circle;
+}
+
+.emoji-tongue .tongue {
+        animation: .8s linear infinite scale, .5s linear infinite opac;
+}
+
+.emoji-angry {
+        animation: .26s linear infinite shake;
+}
+
+@keyframes cry {
+    from {
+        opacity: 0;
+        transform: translateY(-2px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+       opacity: 1;
+    }
+}
+
+
+@keyframes scale {
+    from {
+        transform: scale(0.8);
+    }
+    
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes circle {
+    from {
+       border-radius: 41%; 
+        transform: translateY(2px);
+    }
+    
+    to {
+        border-radius: 50%; 
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    from {
+       
+        transform: translateX(-5px);
+    }
+    
+    to {
+        transform: translateX(5px);
+    }
+}
